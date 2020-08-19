@@ -30,20 +30,6 @@
 }
 
 /* === MAIN === */
-.main-content {
-  background: #fbdfdb;
-  border-radius: 30px;
-
-  padding-top: 60px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-column-align: center;
-  justify-content: space-between;
-  justify-items: center;
-
-  align-items: center;
-}
 
 /* +++ WRAPPER +++ */
 
