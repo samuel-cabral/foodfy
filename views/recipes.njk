@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>{{wrappers.company}} | Receitas</title>
+{% endblock title %}
+
+{% block header %}
+  <header class="header">
+    <a href="/">
+      <img src="{{assets.logo}}" alt="Foodfy"/>
+    </a>
+    <a id="about" href="/about">Sobre</a>
+    <a id="recipes" href="/recipes"><strong>Receitas</strong></a>
+  </header>
+{% endblock header %}
+
+{% block content %}
+
+  <div class="cards">
+    {% for card in recipes %}
+      <div class="card">
+        <div class="card-image-container">
+          <img src="{{card.image}}" alt="Imagem de {{card.title}}">
+        </div>
+        <div class="card-content">
+          <h1>{{card.title}}</h1>
+          <p>por {{card.author}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for card in recipes %}
+      <div class="card">
+        <div class="card-image-container">
+          <img src="{{card.image}}" alt="Imagem de {{card.title}}">
+        </div>
+        <div class="card-content">
+          <h1>{{card.title}}</h1>
+          <p>por {{card.author}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

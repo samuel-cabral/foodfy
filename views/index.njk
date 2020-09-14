@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="wrapper">
+    <div class="wrapper-content">
+      <h1>{{wrappers.title}}</h1>
+      <p>{{wrappers.description}}</p>
+    </div>
+    <div class="wrapper-image-container">
+      <img src="{{assets.chef}}" alt="Imagem de Chef">
+    </div>
+  </div>
+
+  <div class="section-content">
+    <h1>Mais acessadas</h1>
+  </div>
+
+  <div class="cards">
+    {% for card in recipes %}
+      <div class="card">
+        <div class="card-image-container">
+          <img src="{{card.image}}" alt="Imagem de {{card.title}}">
+        </div>
+        <div class="card-content">
+          <h1>{{card.title}}</h1>
+          <p>por
+            {{card.author}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
