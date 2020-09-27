@@ -19,6 +19,7 @@ nunjucks.configure('views', {
   noCache: true,
 });
 
+// rotas
 server.get('/', (req, res) => {
   const assets = assetsData;  
   const wrapper = wrapperData;
@@ -42,29 +43,15 @@ server.get('/recipes', (req, res) => {
   return res.render('recipes', { assets, wrapper, recipes });
 });
 
-server.get('/recipes/:index', function (req, res) {
+server.get('/recipes/:index', (req, res) => {
   const assets = assetsData;  
-  const wrapper = wrapperData;
   const recipes = recipesData;
-
   const recipeIndex = req.params.index;
-
-  for (const iterator of recipes) {
-    if (iterator === recipeIndex) {
-      recipeIndex = iterator;
-    }
-  }
-  console.log(recipeIndex);
-
-  return res.render(
-    'recipes', 
-    { 
-      assets, 
-      wrapper, 
-      item: recipes[recipeIndex] 
-    });
+  
+  return res.render('recipes', {assets, recipe: recipes[recipeIndex] });
 });
 
-server.listen(3000, function () {
+// configurando porta do servidor
+server.listen(3000, () => {
   console.log('🚀 Server is running on port 3000');
 });

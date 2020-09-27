@@ -14,29 +14,14 @@
 
 {% block content %}
   <div class="recipe-image-container">
-    <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
   </div>
 
   <div class="recipe-content">
-    <h1>{{item.title}}</h1>
-    <p>por {{item.author}}</p>
+    <h1>{{recipe.title}}</h1>
+    <p>por {{recipe.author}}</p>
   </div>
 
-  <section class="ingredients-content">
-    <div class="title-section">
-      <h2>Ingredientes</h2>
-      <button>Esconder</button>
-    </div>
-
-    <div class="show-content">
-      {% for variable in iterator %}
-        <li>{{ingredients}}</li>
-      {% endfor %}
-    </div>
-
-  </section>
 {% endblock content %}
 
-{% block scripts %}
-  <script src="scripts/hideShow.js"></script>
-{% endblock scripts %}
+<script src="/scripts/hideShow.js"></script>

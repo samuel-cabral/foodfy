@@ -1,10 +1,10 @@
 module.exports = {
-  asinhas: '/asinhas.png',
-  burger: '/burger.png',
-  chef: '/chef.png',
-  doce: '/doce.png',
-  espaguete: '/espaguete.png',
-  lasanha: '/lasanha.png',
-  logo: '/logo.png',
-  pizza: '/pizza.png',
+  asinhas: '/assets/asinhas.png',
+  burger: '/assets/burger.png',
+  chef: '/assets/chef.png',
+  doce: '/assets/doce.png',
+  espaguete: '/assets/espaguete.png',
+  lasanha: '/assets/lasanha.png',
+  logo: '/assets/logo.png',
+  pizza: '/assets/pizza.png',
 }

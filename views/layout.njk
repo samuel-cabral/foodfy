@@ -8,18 +8,18 @@
       <title>Foodfy</title>
     {% endblock title %}
 
-    <link rel="stylesheet" href="/styles.css"/>
+    <link rel="stylesheet" href="/styles/styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
     {% block header %}
       <header class="header">
-          <a href="/">
-            <img src="{{assets.logo}}" alt="Foodfy"/>
-          </a>
-          <a id="about" href="/about">Sobre</a>
-          <a id="recipes" href="/recipes">Receitas</a>
+        <a href="/">
+          <img src="{{assets.logo}}" alt="Foodfy"/>
+        </a>
+        <a id="about" href="/about">Sobre</a>
+        <a id="recipes" href="/recipes">Receitas</a>
       </header>
     {% endblock header %}
 
@@ -29,7 +29,5 @@
       <p>Todos os direitos reservados, receitas Foodfy.</p>
     </footer>
 
-    {% block scripts %}
-      <script src="scripts/script.js"></script>
-    {% endblock scripts %}
+    <script src="scripts/script.js"></script>
   </html>

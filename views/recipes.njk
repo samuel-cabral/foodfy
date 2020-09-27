@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block title %}
-  <title>{{wrappers.company}} | Receitas</title>
+  <title>{{wrapper.company}} | Receitas</title>
 {% endblock title %}
 
 {% block header %}
@@ -18,19 +18,7 @@
 
   <div class="cards">
     {% for card in recipes %}
-      <div class="card">
-        <div class="card-image-container">
-          <img src="{{card.image}}" alt="Imagem de {{card.title}}">
-        </div>
-        <div class="card-content">
-          <h1>{{card.title}}</h1>
-          <p>por {{card.author}}</p>
-        </div>
-      </div>
-    {% endfor %}
-
-    {% for card in recipes %}
-      <div class="card">
+      <div class="card" id="{{ loop.index }}">
         <div class="card-image-container">
           <img src="{{card.image}}" alt="Imagem de {{card.title}}">
         </div>
