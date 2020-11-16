@@ -1,52 +1,35 @@
-<h1 align="center">
-    <img alt="Launchbase" src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/logo.png" width="400px" />
-</h1>
+# Refatorando Foodfy
 
-<h3 align="center">
-  Desafios Módulo 2 - Iniciando no Front-end
-</h3>
+Created: Nov 5, 2020 3:20 PM
+Created by: Samuel Lima
+Tags: Nodejs
 
-<blockquote align="center">“Faça seu melhor, mas sempre com prazo de entrega!”</blockquote>
+## 🚀 Sobre o desafio
 
-<p align="center">
+### **Arquivo de dados**
 
-  <a href="https://rocketseat.com.br">
-    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%23F8952D">
-  </a>
+- [x]  Crie um arquivo `data.js` na raiz do seu projeto com o conteúdo de [link](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-03/blob/master/assets/data.js).
 
-  <a href="LICENSE" >
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
-  </a>
+### **Alterações no projeto**
 
-</p>
+- [x]  Use os dados das receitas contidos no arquivo `data.js` para a página de listagem de receitas e para a home.
+- [ ]  Na home, liste as 6 primeiras receitas, não é necessário agora sabermos sobre as receitas mais acessadas.
+- [ ]  Na listagem, liste todas receitas do arquivo.
 
-<p align="center">
-  <a href="#file_cabinet-materiais">Materiais</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-  <a href="#memo-licença">Licença</a>
-</p>
+*Obs.: Você precisará converter seu projeto em um projeto Node.js usando Nunjucks para mostrar cada página.*
 
-## :file_cabinet: Materiais
+## Detalhe da receita
 
-- [Elementos principais do HTML](materiais/html.pdf)
-- [Propriedades importantes no CSS](materiais/css.pdf)
+- [ ]  Ao clicar em uma receita agora o usuário deve ser redirecionado para uma nova página contendo todas informações da receita como ingredientes, modo de preparo e informações adicionais (todas essas informações estão contidas no arquivo `data.js`).
+- [ ]  Na página de listagem não é mais necessário abrir o modal como tínhamos no desafio anterior do Foodfy.
 
-## :rocket: Desafios
+Obs.: A página do detalhe da receita precisa buscar no arquivo data.js apenas a receita desejada pelo usuário, por isso você usará de parâmetros na rota dessa página, por exemplo: [http://localhost:3000/recipes/3](http://localhost:3000/recipes/3), nesse caso estaríamos acessando os detalhes da receita com índice 3 no array de receitas (recipes[3]).
 
-- [Primeiro HTML](desafios/02-1-primeiro-html.md)
-- [Página de descrição](desafios/02-2-pagina-descricao.md)
-- [Página de cursos e iframe](desafios/02-3-pagina-cursos-e-iframe.md)
-- [Construindo Foodfy](desafios/02-foodfy.md)
+Para obter um ID da receita através da URL no Node.js você vai usar conforme o exemplo:
 
-## :calendar: Entrega
+server.get("/recipes/:index", function (req, res) { const recipes = [...]; // Array de receitas carregadas do data.js const recipeIndex = req.params.index; console.log(recipes[recipeIndex]);
+})
 
-Esses desafios **não precisam ser entregues** e não receberão correção. Após concluí-los, adicionar esses códigos ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
+### **Ação de mostrar/esconder**
 
-## :memo: Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
-
----
-
-Feito com :purple_heart: by [Rocketseat](https://rocketseat.com.br) :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+- [ ]  Dentro da página do detalhe da receita, em cada seção "Ingredientes", "Modo de preparo" e "Informações adicionais" há um botão `Mostrar` ou `Esconder` que ao ser clicado deve mostrar ou esconder o texto abaixo do título baseado em seu estado de visibilidade.

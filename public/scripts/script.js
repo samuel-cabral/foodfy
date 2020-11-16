@@ -6,3 +6,5 @@ for (const card of cards) {
     window.location.href = `recipes/${cardId}`;
   });
 }
+
+// event.preventDefault() // evita o refresh da pagína.

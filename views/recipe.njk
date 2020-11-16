@@ -6,22 +6,55 @@
       <img src="{{assets.logo}}" alt="Foodfy"/>
     </a>
     <a id="about" href="/about">Sobre</a>
-    <a id="recipes" href="/recipes">
-      <strong>Receitas</strong>
-    </a>
+    <a id="recipes" href="/recipes">Receitas</a>
   </header>
 {% endblock header %}
 
 {% block content %}
-  <div class="recipe-image-container">
-    <img src="{{item.image}}" alt="Imagem de {{item.title}}">
-  </div>
+  <div class="recipe-page">
 
-  <div class="recipe-content">
-    <h1>{{item.title}}</h1>
-    <p>por {{item.author}}</p>
-  </div>
+    <div class="top">
+      <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+      <h1>{{item.title}}</h1>
+      <p>por
+        {{item.author}}</p>
+    </div>
 
-{% endblock content %}
+    <section class="ingredients">
+      <div class="title">
+        <h1>Ingredientes</h1>
+        <button>Esconder</button>
+      </div>
+      <div class="list-content show">
+        {% for ingredient in item.ingredients %}
+          <li>{{ingredient}}</li>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="prepare-mode">
+      <div class="title">
+        <h1>Modo de preparo</h1>
+        <button>Esconder</button>
+      </div>
+      <div class="list-content show">
+        {% for prepareStep in item.preparation %}
+          <p>{{prepareStep}}</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="information">
+      <div class="title">
+        <h1>Informações adicionais</h1>
+        <button>Esconder</button>
+      </div>
+      <div class="list-content show">
+        <p>{{item.information}}</p>
+      </div>
+    </div>
+  </section>
+</div>
 
 <script src="/scripts/hideShow.js"></script>
+{% endblock content %}

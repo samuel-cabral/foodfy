@@ -1,32 +1,38 @@
 {% extends "layout.njk" %}
 
 {% block title %}
-  <title>{{wrapper.company}} | Receitas</title>
+  <title>{{wrapper.company}}
+    | Receitas</title>
 {% endblock title %}
 
-{% block header %}
-  <header class="header">
-    <a href="/">
-      <img src="{{assets.logo}}" alt="Foodfy"/>
-    </a>
-    <a id="about" href="/about">Sobre</a>
-    <a id="recipes" href="/recipes"><strong>Receitas</strong></a>
-  </header>
-{% endblock header %}
-
 {% block content %}
-
   <div class="cards">
-    {% for card in recipes %}
+    {% for item in items %}
       <div class="card" id="{{ loop.index }}">
         <div class="card-image-container">
-          <img src="{{card.image}}" alt="Imagem de {{card.title}}">
+          <img src="{{item.image}}" alt="Imagem de {{item.title}}">
         </div>
         <div class="card-content">
-          <h1>{{card.title}}</h1>
-          <p>por {{card.author}}</p>
+          <h1>{{item.title}}</h1>
+          <p>por
+            {{item.author}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for item in items %}
+      <div class="card" id="{{ loop.index }}">
+        <div class="card-image-container">
+          <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+        </div>
+        <div class="card-content">
+          <h1>{{item.title}}</h1>
+          <p>por
+            {{item.author}}</p>
         </div>
       </div>
     {% endfor %}
   </div>
+
+  <script src="/scripts/script.js"></script>
 {% endblock content %}
